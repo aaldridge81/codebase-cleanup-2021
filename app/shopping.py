@@ -4,8 +4,15 @@ from pandas import read_csv
 
 
 def format_usd(my_price):
-    return f"${my_price:,.2f}"
+    """
+    Formats a number as USD with dollar sign and two decimals (also includes thousands separator)
 
+    Params my_price is a number (int or float) tha twe want to format
+    
+    Examples: format_usd(10)
+
+    """
+    return f"${my_price:,.2f}"
 
 
 # READ INVENTORY OF PRODUCTS
@@ -33,6 +40,8 @@ checkout_at = datetime.now()
 subtotal = sum([float(p["price"]) for p in selected_products])
 
 # PRINT RECEIPT
+
+## duplication to clean up 
 
 print("---------")
 print("CHECKOUT AT: " + str(checkout_at.strftime("%Y-%M-%d %H:%m:%S")))
